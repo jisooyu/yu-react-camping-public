@@ -10,14 +10,15 @@ const useFetchData = () => {
 		const fetchData = async () => {
 			try {
 				const response = await axios.get('/camp');
-				console.log('Array check in hook', Array.isArray(response.data));
-				if (response) {
-					setIsLoading(false);
+				if (response.status >= 200 && response.status < 300) {
 					setData(response.data);
+				} else {
+					throw new Error(`Failed to fetch data. Status: ${response.status}`);
 				}
 			} catch (error) {
-				console.log(error);
+				console.error(error); // Log the error for debugging purposes
 				console.log({ message: 'fail to fetch data' });
+			} finally {
 				setIsLoading(false);
 			}
 		};
