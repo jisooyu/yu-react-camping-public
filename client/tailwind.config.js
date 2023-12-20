@@ -11,9 +11,6 @@ module.exports = {
 			animation: {
 				shimmer: 'shimmer 1.5s infinite',
 			},
-			colors: {
-				'violet-color': 'var(--violet-color)',
-			},
 		},
 	},
 	plugins: [],

@@ -1,53 +1,111 @@
+import React, { useRef, useState } from 'react';
+import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-// import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
 
+import '../styles.css';
+
 function CampingDetail({ campingData }) {
+	const [slideBegOrNot, handleSlideByState] = useState({
+		isFirst: true,
+		isLast: false,
+	});
+	const SlideRef = useRef();
+
+	const handleNext = () => {
+		SlideRef.current.swiper.slideNext();
+	};
+
+	const handlePrev = () => {
+		SlideRef.current.swiper.slidePrev();
+	};
+
+	const onSlideChange = (swiper) => {
+		handleSlideByState({
+			isFirst: swiper.isBeginning,
+			isLast: swiper.isEnd,
+		});
+	};
+
+	const { isLast, isFirst } = slideBegOrNot;
 	return (
-		<div className='container mx-auto'>
-			<h1 className='text-4xl font-bold mb-8'>Go Camping Information</h1>
-			<Swiper
-				spaceBetween={10}
-				navigation={true}
-				loop={true}
-				// pagination={true}
-				modules={[
-					Navigation,
-					// Pagination
-				]}
-				className='swiper'
-				//make styles in css
-				//or just use tailwind
-				// className="max-w-[500px] mb-20 mt-20"
-				breakpoints={{
-					450: {
-						slidesPerView: 1,
-					},
-					630: {
-						slidesPerView: 2,
-					},
-					920: {
-						slidesPerView: 3,
-					},
-				}}
-			>
-				{campingData.map((campingItem) => (
-					<SwiperSlide key={campingItem.contentId}>
-						<div className='w-full p-2'>
-							<p>{campingItem.addr1}</p>
-							<div className='aspect-w-4 aspect-h-3'>
-								<img
-									src={campingItem.firstImageUrl}
-									alt='campingPicture'
-									className='object-cover w-96 h-96'
+		<div className='container'>
+			<h1 className='heading'>Go Camping Sites</h1>
+
+			<div className='post-box'>
+				<div className='bg-left'></div>
+				<div className='bg-right'></div>
+
+				<div className='post-heading'>
+					<div className='heading-box'>
+						<h2 className='second-heading'>Camping Sites</h2>
+						<div className='pagination-slide'>
+							<p className='swiper-paginations'></p>
+							<div className='bs-icons'>
+								<BsArrowLeft
+									className={`Arrow ${isFirst ? 'disabled' : ''}`}
+									onClick={handlePrev}
+								/>
+								<BsArrowRight
+									className={`Arrow ${isLast ? 'disabled' : ''}`}
+									onClick={handleNext}
 								/>
 							</div>
 						</div>
-					</SwiperSlide>
-				))}
-			</Swiper>
+					</div>
+				</div>
+				<div className='post-conatin'>
+					<Swiper
+						slidesPerView={1}
+						spaceBetween={0}
+						className={'mySwiper'}
+						ref={SlideRef}
+						onSlideChange={onSlideChange}
+						pagination={{
+							el: '.swiper-paginations',
+							type: 'fraction',
+						}}
+						navigation={false}
+						modules={[Pagination, Navigation]}
+						breakpoints={{
+							0: {
+								slidesPerView: 1,
+							},
+							390: {
+								slidesPerView: 1.5,
+							},
+							502: {
+								slidesPerView: 2,
+							},
+							802: {
+								slidesPerView: 2.5,
+							},
+							992: {
+								slidesPerView: 3,
+							},
+							1200: {
+								slidesPerView: 4,
+							},
+						}}
+					>
+						{campingData.map((campingItem) => (
+							<SwiperSlide key={campingItem.contentId}>
+								<div className='w-full p-2'>
+									<img
+										src={campingItem.firstImageUrl}
+										alt='campingPicture'
+										className='object-cover w-96 h-96'
+									/>
+									<p>{campingItem.addr1}</p>
+								</div>
+							</SwiperSlide>
+						))}
+					</Swiper>
+				</div>
+			</div>
 		</div>
 	);
 }
