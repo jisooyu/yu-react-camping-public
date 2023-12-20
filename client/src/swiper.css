@@ -1,0 +1,26 @@
+.swiper {
+	&-slide img {
+		border-radius: 0 !important;
+		height: 320px !important;
+	}
+
+	&-button-next,
+	&-button-prev {
+		color: var(--violet-color); /* Use custom variable for color */
+	}
+
+	&-pagination-bullet {
+		width: 10px;
+		height: 10px;
+		opacity: 1;
+		background: rgba(0, 0, 0, 0.2);
+		transform: translateY(6px);
+	}
+
+	@media (max-width: 450px) {
+		&-button-next,
+		&-button-prev {
+			display: grid !important;
+		}
+	}
+}
