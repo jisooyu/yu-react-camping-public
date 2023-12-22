@@ -1,30 +1,18 @@
-import React from 'react';
+import { Carousel } from '@material-tailwind/react';
 
-function CampingDetail({ campingData }) {
+function CampingDetail({ campingItem }) {
 	let content;
 	content = (
-		<div className='flex flex-wrap'>
-			{campingData.map((campingItem) => (
-				<div
-					key={campingItem.contentId}
-					className='w-full md:w-1/2 lg:w-1/3 p-4 mt-3'
-				>
-					<p>{campingItem.addr1}</p>
-					<img
-						src={campingItem.firstImageUrl}
-						alt='campingPicture'
-						className='object-cover w-full h-full'
-					/>
-				</div>
-			))}
-		</div>
+		<Carousel className='rounded-xl'>
+			<p>{campingItem.addr1}</p>
+			<img
+				src={campingItem.firstImageUrl}
+				alt='campingPicture'
+				className='object-cover w-full h-full'
+			/>
+		</Carousel>
 	);
-	return (
-		<div className='container mx-auto flex flex-col items-center mt-3'>
-			<h2 className='text-2xl font-bold mb-4'>Go Camping Information</h2>
-			{content}
-		</div>
-	);
+	return <>{content}</>;
 }
 
 export default CampingDetail;
