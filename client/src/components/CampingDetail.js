@@ -1,29 +1,22 @@
 import React from 'react';
+import { TECarouselItem } from 'tw-elements-react';
 
-function CampingDetail({ campingData }) {
-	let content;
-	content = (
-		<div className='flex flex-wrap'>
-			{campingData.map((campingItem) => (
-				<div
-					key={campingItem.contentId}
-					className='w-full md:w-1/2 lg:w-1/3 p-4 mt-3'
+function CampingDetail({ campingItem }) {
+	return (
+		<>
+			<div className='flex flex-row'>
+				<TECarouselItem
+					itemID={campingItem.contentId}
+					className='relative w-1/2 transition-transform duration-[600ms] ease-in-out'
 				>
-					<p>{campingItem.addr1}</p>
 					<img
 						src={campingItem.firstImageUrl}
 						alt='campingPicture'
-						className='object-cover w-full h-full'
 					/>
-				</div>
-			))}
-		</div>
-	);
-	return (
-		<div className='container mx-auto flex flex-col items-center mt-3'>
-			<h2 className='text-2xl font-bold mb-4'>Go Camping Information</h2>
-			{content}
-		</div>
+					<p>{campingItem.addr1}</p>
+				</TECarouselItem>
+			</div>
+		</>
 	);
 }
 
