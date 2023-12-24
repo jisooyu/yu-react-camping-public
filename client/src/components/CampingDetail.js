@@ -7,7 +7,7 @@ function CampingDetail({ campingData }) {
 			<Carousel>
 				{campingData.map((campingItem) => (
 					<div key={campingItem.contentId}>
-						<div className='relative h-full w-full flex justify-center'>
+						<div className='relative aspect-ratio-9/9 h-96 w-full flex justify-center'>
 							<img
 								src={campingItem.firstImageUrl || 'no-image-available.jpeg'}
 								alt='campingPicture'
