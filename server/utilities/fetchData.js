@@ -7,7 +7,7 @@ const fetchData = async () => {
 		return await axios.get(url.goCampingUrl, {
 			params: {
 				serviceKey: key.serviceKey,
-				numOfRows: '20',
+				numOfRows: '50',
 				pageNo: '1',
 				MobileOS: 'IOS',
 				MobileApp: 'AppTest',

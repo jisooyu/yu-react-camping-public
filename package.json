@@ -11,5 +11,8 @@
 	"license": "ISC",
 	"dependencies": {
 		"concurrently": "^8.2.2"
+	},
+	"devDependencies": {
+		"daisyui": "^4.4.24"
 	}
 }
