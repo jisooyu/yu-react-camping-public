@@ -4,7 +4,7 @@ function CampingDetail({ campingData }) {
 	let content;
 	content = (
 		<>
-			<Carousel>
+			<Carousel className='rounded-xl'>
 				{campingData.map((campingItem) => (
 					<div key={campingItem.contentId}>
 						<div className='relative aspect-ratio-9/9 h-96 w-full flex justify-center'>
@@ -44,21 +44,21 @@ function CampingDetail({ campingData }) {
 									<Typography
 										variant='paragraph'
 										color='black'
-										className='py-1.5 font-normal transition-colors hover:text-blue-gray-900'
+										className='py-1.5 '
 									>
 										캠핑장 주소:{campingItem.addr1}
 									</Typography>
 									<Typography
 										variant='paragraph'
 										color='black'
-										className='py-1.5 font-normal transition-colors hover:text-blue-gray-900'
+										className='py-1.5 '
 									>
 										펫입장여부:{campingItem.animalCmgCl}
 									</Typography>
 									<Typography
 										variant='paragraph'
 										color='black'
-										className='py-1.5 font-normal transition-colors hover:text-blue-gray-900'
+										className='py-1.5 '
 									>
 										부대시설:{campingItem.caravInnerFclty || 'N.A.'}
 									</Typography>

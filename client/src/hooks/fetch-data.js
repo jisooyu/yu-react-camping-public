@@ -4,7 +4,7 @@ import axios from 'axios';
 // Custom hook for fetching data
 const useFetchData = () => {
 	const [data, setData] = useState([]);
-	const [isLoading, setIsLoading] = useState(false);
+	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -12,19 +12,16 @@ const useFetchData = () => {
 				const response = await axios.get('/camp');
 				if (response.status >= 200 && response.status < 300) {
 					setData(response.data);
+					setIsLoading(false);
 				} else {
 					throw new Error(`Failed to fetch data. Status: ${response.status}`);
 				}
 			} catch (error) {
 				console.error(error); // Log the error for debugging purposes
 				console.log({ message: 'fail to fetch data' });
-			} finally {
-				setIsLoading(false);
 			}
 		};
-
 		fetchData();
-		setIsLoading(true);
 	}, []);
 
 	return { data, isLoading };
