@@ -31,35 +31,39 @@ function CampingDetail({ campingData }) {
 								</div>
 							</div>
 						</div>
-						<div className=' text-center '>
-							<Typography
-								variant='lead'
-								color='black'
-								className='mb-4 '
-							>
-								캠핑장:{campingItem.facltNm}
-							</Typography>
-							<Typography
-								variant='paragraph'
-								color='black'
-								className='mb-2 '
-							>
-								캠핑장 주소:{campingItem.addr1}
-							</Typography>
-							<Typography
-								variant='paragraph'
-								color='black'
-								className='mb-2 '
-							>
-								펫입장여부:{campingItem.animalCmgCl}
-							</Typography>
-							<Typography
-								variant='paragraph'
-								color='black'
-								className='mb-2 '
-							>
-								부대시설:{campingItem.caravInnerFclty || 'N.A.'}
-							</Typography>
+						<div className='relative w-full mt-10 mb-20'>
+							<div className='mx-auto w-full max-w-7xl px-8'>
+								<div className='grid grid-cols-1 justify-between gap-4 md:grid-cols-2'>
+									<Typography
+										variant='h5'
+										color='black'
+										className='mb-4 '
+									>
+										캠핑장:{campingItem.facltNm}
+									</Typography>
+									<Typography
+										variant='paragraph'
+										color='black'
+										className='py-1.5 font-normal transition-colors hover:text-blue-gray-900'
+									>
+										캠핑장 주소:{campingItem.addr1}
+									</Typography>
+									<Typography
+										variant='paragraph'
+										color='black'
+										className='py-1.5 font-normal transition-colors hover:text-blue-gray-900'
+									>
+										펫입장여부:{campingItem.animalCmgCl}
+									</Typography>
+									<Typography
+										variant='paragraph'
+										color='black'
+										className='py-1.5 font-normal transition-colors hover:text-blue-gray-900'
+									>
+										부대시설:{campingItem.caravInnerFclty || 'N.A.'}
+									</Typography>
+								</div>
+							</div>
 						</div>
 					</div>
 				))}
