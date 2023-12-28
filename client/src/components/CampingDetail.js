@@ -1,22 +1,22 @@
 import { Carousel, Typography } from '@material-tailwind/react';
+import LazyImage from '../pages/LazyImage';
 
 function CampingDetail({ campingData }) {
 	let content;
 	content = (
-		<>
-			<Carousel className='rounded-xl'>
-				{campingData.map((campingItem) => (
-					<div key={campingItem.contentId}>
+		<Carousel className='mx-auto'>
+			{campingData.map((campingItem) => (
+				<div key={campingItem.contentId}>
+					<div className='relative h-full w-full'>
 						<div className='relative aspect-ratio-9/9 h-96 w-full flex justify-center'>
-							<img
+							<LazyImage
 								src={campingItem.firstImageUrl || 'no-image-available.jpeg'}
 								alt='campingPicture'
-								className='h-full w-full object-cover'
 							/>
 						</div>
 						<div className='absolute inset-0 grid h-full w-full place-items-center bg-gray5/7'>
 							<div className='w-3/4 text-center md:w-2/4'>
-								<div className='p-6 pt-0'>
+								<div className='p-6 pt-10'>
 									<button
 										className='align-middle font-sans font-bold text-center uppercase py-3 px-6 rounded-lg bg-gray-400'
 										type='button'
@@ -42,21 +42,21 @@ function CampingDetail({ campingData }) {
 										캠핑장:{campingItem.facltNm}
 									</Typography>
 									<Typography
-										variant='paragraph'
+										variant='h5'
 										color='black'
 										className='py-1.5 '
 									>
 										캠핑장 주소:{campingItem.addr1}
 									</Typography>
 									<Typography
-										variant='paragraph'
+										variant='h5'
 										color='black'
 										className='py-1.5 '
 									>
 										펫입장여부:{campingItem.animalCmgCl}
 									</Typography>
 									<Typography
-										variant='paragraph'
+										variant='h5'
 										color='black'
 										className='py-1.5 '
 									>
@@ -66,9 +66,9 @@ function CampingDetail({ campingData }) {
 							</div>
 						</div>
 					</div>
-				))}
-			</Carousel>
-		</>
+				</div>
+			))}
+		</Carousel>
 	);
 	return <>{content}</>;
 }

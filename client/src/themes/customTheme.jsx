@@ -12,7 +12,7 @@ export const customTheme = {
 					<button
 						onClick={handlePrev}
 						disabled={!loop && firstIndex}
-						className='!absolute top-2/4 left-4 -translate-y-2/4 rounded-full select-none transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-12 max-w-[48px] h-12 max-h-[48px] text-white hover:bg-white/10 active:bg-white/30 grid place-items-center'
+						className='!absolute top-1/4 left-4 -translate-y-2/4 rounded-full select-none transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-12 max-w-[48px] h-12 max-h-[48px] text-white hover:bg-white/10 active:bg-white/30 grid place-items-center'
 					>
 						<FontAwesomeIcon
 							icon={faChevronLeft}
@@ -25,7 +25,7 @@ export const customTheme = {
 				<button
 					onClick={handleNext}
 					disabled={!loop && lastIndex}
-					className='!absolute top-2/4 right-4 -translate-y-2/4 rounded-full select-none transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-12 max-w-[48px] h-12 max-h-[48px] text-white hover:bg-white/10 active:bg-white/30 grid place-items-center'
+					className='!absolute top-1/4 right-4 -translate-y-2/4 rounded-full select-none transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-12 max-w-[48px] h-12 max-h-[48px] text-white hover:bg-white/10 active:bg-white/30 grid place-items-center'
 				>
 					<FontAwesomeIcon
 						icon={faChevronRight}
@@ -64,7 +64,6 @@ export const customTheme = {
 					overflowX: 'overflow-x-hidden',
 					display: 'flex',
 				},
-
 				slide: {
 					width: 'w-full',
 					height: 'h-full',
@@ -74,12 +73,9 @@ export const customTheme = {
 			},
 		},
 	},
-	NavbarWithSearch: {
-		defaultProps: {
-			// Add your custom props here
-		},
-		styles: {
-			// Add your custom styles here
+	nav: {
+		style: {
+			width: 'max-w-screen',
 		},
 	},
 };
