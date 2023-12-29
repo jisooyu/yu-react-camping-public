@@ -28,7 +28,7 @@ const LazyImage = ({ src, alt }) => {
 		<img
 			ref={imgRef}
 			alt={alt}
-			className='h-full w-full object-cover overflow-hidden'
+			className='relative w-full aspect-ratio-9/9  h-96 flex justify-center object-cover'
 		/>
 	);
 };

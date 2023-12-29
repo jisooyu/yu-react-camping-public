@@ -1,4 +1,11 @@
-import { Carousel, Typography } from '@material-tailwind/react';
+import {
+	Carousel,
+	Typography,
+	Card,
+	CardHeader,
+	CardBody,
+	CardFooter,
+} from '@material-tailwind/react';
 import LazyImage from '../pages/LazyImage';
 
 function CampingDetail({ campingData }) {
@@ -7,14 +14,50 @@ function CampingDetail({ campingData }) {
 		<Carousel className='mx-auto'>
 			{campingData.map((campingItem) => (
 				<div key={campingItem.contentId}>
-					<div className='relative h-full w-full'>
-						<div className='relative aspect-ratio-9/9 h-96 w-full flex justify-center'>
+					<Card className='relative h-full w-full'>
+						<CardHeader className='relative h-96 w-full !mr-0 !ml-0'>
 							<LazyImage
 								src={campingItem.firstImageUrl || 'no-image-available.jpeg'}
 								alt='campingPicture'
 							/>
-						</div>
-						<div className='absolute inset-0 grid h-full w-full place-items-center bg-gray5/7'>
+						</CardHeader>
+						<CardBody>
+							<div className='relative w-full mt-10 mb-20'>
+								<div className='mx-auto w-full max-w-7xl px-8'>
+									<div className='grid grid-cols-1 justify-between gap-4 md:grid-cols-2'>
+										<Typography
+											variant='h5'
+											color='black'
+											className='mb-4 '
+										>
+											캠핑장:{campingItem.facltNm}
+										</Typography>
+										<Typography
+											variant='h5'
+											color='black'
+											className='py-1.5 '
+										>
+											캠핑장 주소:{campingItem.addr1}
+										</Typography>
+										<Typography
+											variant='h5'
+											color='black'
+											className='py-1.5 '
+										>
+											펫입장여부:{campingItem.animalCmgCl}
+										</Typography>
+										<Typography
+											variant='h5'
+											color='black'
+											className='py-1.5 '
+										>
+											부대시설:{campingItem.caravInnerFclty || 'N.A.'}
+										</Typography>
+									</div>
+								</div>
+							</div>
+						</CardBody>
+						<CardFooter className='absolute inset-0 grid h-full w-full place-items-center bg-gray5/7'>
 							<div className='w-3/4 text-center md:w-2/4'>
 								<div className='p-6 pt-10'>
 									<button
@@ -30,42 +73,8 @@ function CampingDetail({ campingData }) {
 									</button>
 								</div>
 							</div>
-						</div>
-						<div className='relative w-full mt-10 mb-20'>
-							<div className='mx-auto w-full max-w-7xl px-8'>
-								<div className='grid grid-cols-1 justify-between gap-4 md:grid-cols-2'>
-									<Typography
-										variant='h5'
-										color='black'
-										className='mb-4 '
-									>
-										캠핑장:{campingItem.facltNm}
-									</Typography>
-									<Typography
-										variant='h5'
-										color='black'
-										className='py-1.5 '
-									>
-										캠핑장 주소:{campingItem.addr1}
-									</Typography>
-									<Typography
-										variant='h5'
-										color='black'
-										className='py-1.5 '
-									>
-										펫입장여부:{campingItem.animalCmgCl}
-									</Typography>
-									<Typography
-										variant='h5'
-										color='black'
-										className='py-1.5 '
-									>
-										부대시설:{campingItem.caravInnerFclty || 'N.A.'}
-									</Typography>
-								</div>
-							</div>
-						</div>
-					</div>
+						</CardFooter>
+					</Card>
 				</div>
 			))}
 		</Carousel>
