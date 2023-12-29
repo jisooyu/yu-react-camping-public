@@ -111,7 +111,7 @@ export function NavbarWithSearch() {
 	return (
 		<Navbar
 			color='blue-gray'
-			className='mx-auto max-w-screen-xl px-4 py-2 lg:px-8 lg:py-4'
+			className='mx-auto max-w-screen-xl px-4 py-2 lg:px-8 lg:py-4 rounded-none'
 		>
 			<div className='container mx-auto flex flex-wrap items-center justify-between gap-y-4 text-blue-gray-100'>
 				<Typography

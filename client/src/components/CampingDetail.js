@@ -14,8 +14,8 @@ function CampingDetail({ campingData }) {
 		<Carousel className='mx-auto'>
 			{campingData.map((campingItem) => (
 				<div key={campingItem.contentId}>
-					<Card className='relative h-full w-full'>
-						<CardHeader className='relative h-96 w-full !mr-0 !ml-0'>
+					<Card className='relative h-full w-full rounded-none !m-0'>
+						<CardHeader className='relative h-96 w-full rounded-none'>
 							<LazyImage
 								src={campingItem.firstImageUrl || 'no-image-available.jpeg'}
 								alt='campingPicture'
