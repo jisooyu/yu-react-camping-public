@@ -6,7 +6,6 @@ import {
 	CardBody,
 	CardFooter,
 } from '@material-tailwind/react';
-import LazyImage from '../pages/LazyImage';
 
 function CampingDetail({ campingData }) {
 	let content;
@@ -16,7 +15,8 @@ function CampingDetail({ campingData }) {
 				<div key={campingItem.contentId}>
 					<Card className='relative h-full w-full rounded-none'>
 						<CardHeader className='relative aspect-ratio-9/9 h-96 w-full flex justify-center object-cover rounded-xl shadow-xl shadow-blue-gray-900/50'>
-							<LazyImage
+							<img
+								loading='lazy'
 								src={campingItem.firstImageUrl || 'no-image-available.jpeg'}
 								alt='campingPicture'
 							/>
