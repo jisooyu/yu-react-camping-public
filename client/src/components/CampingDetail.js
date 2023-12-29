@@ -11,11 +11,11 @@ import LazyImage from '../pages/LazyImage';
 function CampingDetail({ campingData }) {
 	let content;
 	content = (
-		<Carousel className='mx-auto'>
+		<Carousel>
 			{campingData.map((campingItem) => (
 				<div key={campingItem.contentId}>
-					<Card className='relative h-full w-full rounded-none !m-0'>
-						<CardHeader className='relative h-96 w-full rounded-none'>
+					<Card className='relative h-full w-full rounded-none'>
+						<CardHeader className='relative aspect-ratio-9/9 h-96 w-full flex justify-center object-cover rounded-xl shadow-xl shadow-blue-gray-900/50'>
 							<LazyImage
 								src={campingItem.firstImageUrl || 'no-image-available.jpeg'}
 								alt='campingPicture'
@@ -26,28 +26,28 @@ function CampingDetail({ campingData }) {
 								<div className='mx-auto w-full max-w-7xl px-8'>
 									<div className='grid grid-cols-1 justify-between gap-4 md:grid-cols-2'>
 										<Typography
-											variant='h5'
+											variant='p'
 											color='black'
 											className='mb-4 '
 										>
 											캠핑장:{campingItem.facltNm}
 										</Typography>
 										<Typography
-											variant='h5'
+											variant='p'
 											color='black'
 											className='py-1.5 '
 										>
 											캠핑장 주소:{campingItem.addr1}
 										</Typography>
 										<Typography
-											variant='h5'
+											variant='p'
 											color='black'
 											className='py-1.5 '
 										>
 											펫입장여부:{campingItem.animalCmgCl}
 										</Typography>
 										<Typography
-											variant='h5'
+											variant='p'
 											color='black'
 											className='py-1.5 '
 										>
@@ -61,11 +61,12 @@ function CampingDetail({ campingData }) {
 							<div className='w-3/4 text-center md:w-2/4'>
 								<div className='p-6 pt-10'>
 									<button
-										className='align-middle font-sans font-bold text-center uppercase py-3 px-6 rounded-lg bg-gray-400'
+										className='align-middle text-center uppercase py-3 px-6 rounded-lg bg-gray-400'
 										type='button'
 									>
 										<a
-											className='text-black hover:text-red-500 underline !important'
+											className='text-black 
+											underline text-xs hover:text-red-500!important'
 											href={campingItem.homepage}
 										>
 											Home Page Link
