@@ -1,6 +1,6 @@
 import { Typography } from '@material-tailwind/react';
 
-export function FooterWithLogo() {
+export default function Footer() {
 	return (
 		<footer className='flex w-full  h-20 flex-row mt-20 bg-blue-gray-400 py-2flex-wrap items-center justify-center gap-y-6 gap-x-12 border-t border-blue-gray-400 py-6 text-black text-center md:justify-between'>
 			<img

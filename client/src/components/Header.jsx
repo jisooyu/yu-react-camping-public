@@ -8,7 +8,7 @@ import {
 	Input,
 } from '@material-tailwind/react';
 
-export function NavbarWithSearch() {
+export default function Header() {
 	const [openNav, setOpenNav] = useState(false);
 
 	useEffect(() => {
