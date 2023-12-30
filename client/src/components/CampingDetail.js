@@ -14,7 +14,7 @@ function CampingDetail({ campingData }) {
 			{campingData.map((campingItem) => (
 				<div key={campingItem.contentId}>
 					<Card className='relative h-full w-full rounded-none'>
-						<CardHeader className='relative aspect-ratio-9/9 h-96 w-full flex justify-center object-cover rounded-xl shadow-xl shadow-blue-gray-900/50'>
+						<CardHeader className='relative aspect-ratio-9/9 h-96 w-full flex justify-center object-cover '>
 							<img
 								loading='lazy'
 								src={campingItem.firstImageUrl || 'no-image-available.jpeg'}
