@@ -6,7 +6,14 @@ module.exports = withMT({
 		maxWidth: {
 			'2xl': '1500px',
 		},
-		extend: {},
+		extend: {
+			margin: {
+				0: '0',
+			},
+			padding: {
+				0: '0',
+			},
+		},
 	},
 	plugins: [],
 });
