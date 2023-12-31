@@ -2,7 +2,10 @@ import { Typography } from '@material-tailwind/react';
 
 export default function Footer() {
 	return (
-		<footer className='flex w-full  h-22 flex-row mt-20 bg-blue-gray-400 py-2 flex-wrap items-center justify-center gap-y-6 gap-x-12 border-t border-blue-gray-400  text-black text-center md:justify-between shadow-xl shadow-blue-gray-900/50'>
+		<footer
+			className='flex w-full  h-40
+		 flex-row mt-20 bg-blue-gray-400 py-2 flex-wrap items-center justify-center gap-y-6 gap-x-12 border-t border-blue-gray-400  text-black text-center md:justify-between shadow-xl shadow-blue-gray-900/50'
+		>
 			<img
 				src='https://docs.material-tailwind.com/img/logo-ct-dark.png'
 				alt='logo-ct'
