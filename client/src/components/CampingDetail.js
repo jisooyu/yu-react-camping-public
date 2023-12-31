@@ -23,7 +23,7 @@ function CampingDetail({ campingData }) {
 						</CardHeader>
 						<CardBody>
 							<div className='relative w-full mt-10 mb-20'>
-								<div className='flex justify-center mb-32'>
+								<div className='flex justify-center '>
 									<button
 										className='align-middle text-center uppercase py-3 px-6 rounded-lg bg-gray-400'
 										type='button'
@@ -37,7 +37,7 @@ function CampingDetail({ campingData }) {
 										</a>
 									</button>
 								</div>
-								<div className='mx-auto w-full max-w-7xl px-8'>
+								<div className='mx-auto w-full max-w-7xl mt-8 px-8'>
 									<div className='grid grid-cols-1 justify-between gap-4 md:grid-cols-2'>
 										<Typography
 											variant='paragraph'
