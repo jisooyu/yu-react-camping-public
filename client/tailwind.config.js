@@ -13,6 +13,7 @@ module.exports = withMT({
 			padding: {
 				0: '0',
 			},
+			boxSizing: ['responsive', 'border-box'],
 		},
 	},
 	plugins: [],
