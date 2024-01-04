@@ -10,7 +10,16 @@ import {
 
 export default function Header() {
 	const [openNav, setOpenNav] = useState(false);
-
+	const [search, setSearch] = useState('');
+	const handleChange = (e) => {
+		setSearch(e.target.value);
+		console.log(search);
+	};
+	const handleClick = (e) => {
+		e.preventDefault();
+		setSearch(search);
+		console.log(search);
+	};
 	useEffect(() => {
 		// adds an event listener to the resize event of the window.
 		// The event listener is an arrow function
@@ -126,6 +135,7 @@ export default function Header() {
 				<div className='hidden items-center gap-x-2 lg:flex'>
 					<div className='relative flex w-full gap-2 md:w-max'>
 						<Input
+							onChange={handleChange}
 							type='search'
 							placeholder='Search'
 							containerProps={{
@@ -159,6 +169,7 @@ export default function Header() {
 						</div>
 					</div>
 					<Button
+						onClick={handleClick}
 						size='md'
 						className='rounded-lg '
 					>
@@ -209,6 +220,7 @@ export default function Header() {
 					<div className='flex flex-col gap-x-2 sm:flex-row sm:items-center'>
 						<div className='relative w-full gap-2 md:w-max'>
 							<Input
+								onChange={handleChange}
 								type='search'
 								placeholder='Search'
 								containerProps={{
